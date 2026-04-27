@@ -37,3 +37,38 @@
 
 ## 💡 Key Idea
 The system combines **computer vision (color extraction)** with **LLM reasoning** to generate intelligent and context-aware fashion recommendations.
+
+
+
+
+## ⚙️ Setup Instructions
+
+> **Python Version:** Python 3.14
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Saichand4510/Fashion_Recommender.git
+cd fashionrecommendation
+
+# 2. Create virtual environment (Python 3.14+)
+python -m venv venv
+
+# 3. Activate environment
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+
+# 4. Install dependencies
+pip install -r requirements.txt
+
+# 5. Create .env file and add your API key
+# GROQ_API_KEY=your_api_key_here
+
+# 6. Run backend (FastAPI)
+uvicorn app:app --reload
+
+# 7. Run frontend (Streamlit) in another terminal
+streamlit run frontend.py

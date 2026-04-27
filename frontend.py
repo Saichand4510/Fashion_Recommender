@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 
-API_URL = "http://127.0.0.1:8000/recommend"  # change this after deployment
+API_URL = "https://fashion-recommender-3044.onrender.com/recommend"  # change this after deployment
 
 st.set_page_config(page_title="Fashion Recommender", layout="centered")
 
