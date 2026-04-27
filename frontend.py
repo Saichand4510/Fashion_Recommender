@@ -47,11 +47,11 @@ if st.button("Get Recommendation"):
                         st.subheader("Detected Colors")
 
                         cols = st.columns(len(result["colors"]))
-                        for i, c in enumerate(result["colors"]):
+                        for i, color in enumerate(result["colors"]):
                             with cols[i]:
                                 st.color_picker(
-                                    label=f"{c['hex']}",
-                                    value=c["hex"],
+                                    label=f"{color}",
+                                    value=color,
                                     disabled=True
                                 )
 
