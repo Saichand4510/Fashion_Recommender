@@ -14,12 +14,11 @@
    - The user provides an image and a query (e.g., outfit preference or occasion).
 
 2. **Color Extraction**
-   - The image is preprocessed by:
-     - Resizing for efficiency  
-     - Cropping the center (based on the assumption that the main subject is centered)  
-     - Removing skin tones and background noise using HSV filtering  
-   - The processed pixels are then passed to **KMeans clustering** to extract dominant colors.  
-   - The dominant colors are converted into **HEX codes**.
+
+   - Background is removed using a segmentation model (`rembg`) to isolate the foreground (clothing).
+   - The image is resized, flattened into pixels, and noise (near-black pixels) is filtered out.
+   - KMeans clustering is applied to identify dominant colors from the processed pixels.
+   - Extracted colors are converted to HEX codes and returned along with their percentage distribution.
 
 3. **LLM Integration**
    - The extracted dominant colors along with the user query are sent to the LLM (**GPT OSS 120B via Groq**).

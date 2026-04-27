@@ -9,3 +9,6 @@ requests
 streamlit
 langchain-groq
 langchain-core
+matplotlib
+rembg
+onnxruntime

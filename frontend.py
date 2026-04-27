@@ -12,7 +12,7 @@ st.title("👗 Fashion Color Recommender")
 user_query = st.text_input("Enter your requirement",
                           placeholder="e.g., I need outfit for a wedding")
 
-uploaded_file = st.file_uploader("Upload clothing image", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Upload clothing image", type=["jpg", "png", "jpeg","webp"])
 
 
 if uploaded_file:
@@ -47,11 +47,11 @@ if st.button("Get Recommendation"):
                         st.subheader("Detected Colors")
 
                         cols = st.columns(len(result["colors"]))
-                        for i, color in enumerate(result["colors"]):
+                        for i, c in enumerate(result["colors"]):
                             with cols[i]:
                                 st.color_picker(
-                                    label=f"{color}",
-                                    value=color,
+                                    label=f"{c['hex']}",
+                                    value=c["hex"],
                                     disabled=True
                                 )
 
