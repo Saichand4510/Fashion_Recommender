@@ -54,6 +54,15 @@ if st.button("Get Recommendation"):
                                     value=color,
                                     disabled=True
                                 )
+ ############# in local uncomment this for suiting the backend of segmentation approach and comment above for loop in local .
+                        # for i, c in enumerate(result["colors"]):
+                        #     with cols[i]:
+                        #         st.color_picker(
+                        #             label=f"{c['hex']}",
+                        #             value=c["hex"],
+                        #             disabled=True
+                        #         )  
+                  
 
              
                     st.subheader("Recommendation")
