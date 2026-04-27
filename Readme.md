@@ -13,9 +13,9 @@
 1. **User Input**
    - The user provides an image and a query (e.g., outfit preference or occasion).
 
-## 2. Color Extraction
+2. **Color Extraction**
 
-### Approach 1: Segmentation-Based (Local Development)
+**Approach 1: Segmentation-Based (Local Development)**
 
 - Background is removed using a segmentation model (`rembg`) to isolate the foreground (clothing).
 - The image is resized, converted to pixels, and noise (near-black pixels) is filtered out.
@@ -24,7 +24,7 @@
 
 ---
 
-### Approach 2: Lightweight Heuristic (Deployed Version)
+**Approach 2: Lightweight Heuristic (Deployed Version)**
 
 - The image is resized and center-cropped (assuming the subject is in the middle).
 - Skin tones and background noise are reduced using HSV-based filtering.
@@ -32,8 +32,7 @@
 - Colors are returned as HEX codes.
 
 ---
-
-### Note
+ **Note**
 
 - The segmentation-based approach provides more accurate results but is memory-intensive.
 - The deployed version uses a lightweight heuristic approach to ensure reliability within resource constraints.
