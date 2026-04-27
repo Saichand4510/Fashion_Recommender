@@ -1,0 +1,4 @@
+__pycache__/
+fashion/
+.env
+*.pyc

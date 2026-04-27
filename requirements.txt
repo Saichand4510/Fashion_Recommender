@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+numpy
+opencv-python
+scikit-learn
+python-multipart
+python-dotenv
+requests
+streamlit
+langchain-groq
+langchain-core
