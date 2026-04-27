@@ -13,12 +13,30 @@
 1. **User Input**
    - The user provides an image and a query (e.g., outfit preference or occasion).
 
-2. **Color Extraction**
+## 2. Color Extraction
 
-   - Background is removed using a segmentation model (`rembg`) to isolate the foreground (clothing).
-   - The image is resized, flattened into pixels, and noise (near-black pixels) is filtered out.
-   - KMeans clustering is applied to identify dominant colors from the processed pixels.
-   - Extracted colors are converted to HEX codes and returned along with their percentage distribution.
+### Approach 1: Segmentation-Based (Local Development)
+
+- Background is removed using a segmentation model (`rembg`) to isolate the foreground (clothing).
+- The image is resized, converted to pixels, and noise (near-black pixels) is filtered out.
+- KMeans clustering is applied to extract dominant colors.
+- Colors are returned as HEX codes along with their percentage distribution.
+
+---
+
+### Approach 2: Lightweight Heuristic (Deployed Version)
+
+- The image is resized and center-cropped (assuming the subject is in the middle).
+- Skin tones and background noise are reduced using HSV-based filtering.
+- KMeans clustering is applied to identify dominant colors.
+- Colors are returned as HEX codes.
+
+---
+
+### Note
+
+- The segmentation-based approach provides more accurate results but is memory-intensive.
+- The deployed version uses a lightweight heuristic approach to ensure reliability within resource constraints.
 
 3. **LLM Integration**
    - The extracted dominant colors along with the user query are sent to the LLM (**GPT OSS 120B via Groq**).
